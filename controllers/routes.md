@@ -3,7 +3,7 @@
 ## GET 
 - Home Page 
 
-- Login
+- Login Done
 
 - /register - Where the user creates an account 
 
