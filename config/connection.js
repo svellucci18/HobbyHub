@@ -7,7 +7,7 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
-    (process.env.DB_NAME || 'flashcard_db'),
+    (process.env.DB_NAME || 'hobbyHub_db'),
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
