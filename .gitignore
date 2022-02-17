@@ -1,5 +1,7 @@
 # DS.store
 .DS_Store
+node_modules
+.env
 
 # Logs
 logs
