@@ -36,8 +36,8 @@ Hobby.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'hobby',
   }
 );
 
-module.exports = Project;
+module.exports = Hobby;
