@@ -24,12 +24,11 @@
     "no-trailing-spaces": "error",
     "default-case": "error",
     "no-fallthrough": "error",
-    "no-unused-vars": "error",
+    // "no-unused-vars": "error",
     "no-use-before-define": "error",
     "no-redeclare": "error",
     "brace-style": "error",
     "indent": ["error", 2],
-    "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "radix": "off"
   },
