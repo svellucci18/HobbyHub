@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Hobby extends Model {}
 
@@ -26,8 +26,8 @@ Hobby.init(
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'category',
-        key: 'id',
+        model: "category",
+        key: "id",
       },
     },
   },
@@ -36,7 +36,7 @@ Hobby.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'hobby',
+    modelName: "hobby",
   }
 );
 

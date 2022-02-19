@@ -4,7 +4,7 @@ const User = require("./User");
 
 Hobby.belongsTo(Category, {
   foreignKey: "category_id",
-  onDelete: 'CASCADE',
+  onDelete: "CASCADE",
 });
 
 Category.hasMany(Hobby, {
