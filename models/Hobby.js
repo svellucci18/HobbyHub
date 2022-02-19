@@ -23,10 +23,10 @@ Hobby.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'category',
         key: 'id',
       },
     },
