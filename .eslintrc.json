@@ -30,7 +30,12 @@
     "brace-style": "error",
     "indent": ["error", 2],
     "semi": ["error", "always"],
-    "radix": "off"
+    "radix": "off",
+    "quotes": ["error", "double", {"allowTemplateLiterals": true}]
   },
-  "extends": ["prettier"]
+  "extends": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  }
 }
