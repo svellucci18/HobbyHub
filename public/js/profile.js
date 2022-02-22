@@ -26,6 +26,7 @@ const delButtonHandler = async (event) => {
     const id = event.target.getAttribute("data-id");
 
     const response = await fetch(`/api/hobbies/${id}`, {
+
       method: "DELETE",
     });
 
@@ -37,6 +38,17 @@ const delButtonHandler = async (event) => {
   }
 };
 
+
+
+
+const newHobbyButtonHandler = async (event) => {
+  event.preventDefault();
+  var el = document.getElementById("newHobbyCard");
+  el.style.display = "block";
+};
+
+
+
 document
   .querySelector(".new-hobby-form")
   .addEventListener("submit", newFormHandler);
@@ -44,3 +56,7 @@ document
 document
   .querySelector(".hobby-list")
   .addEventListener("click", delButtonHandler);
+
+document
+  .querySelector(".newHobbyButton")
+  .addEventListener("click", newHobbyButtonHandler);

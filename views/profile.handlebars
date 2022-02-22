@@ -1,44 +1,73 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
-  </div>
-</div>
+<div id="profilePage" class="row">
+  <div id="yourProfile" class="col">
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Hobby:</h3>
-
-    <form class="form new-hobby-form">
-      <div class="form-group">
-        <label for="hobby-name">hobby name:</label>
-        <input class="form-input" type="text" id="hobby-name" name="hobby-name" />
-      </div>
-      <div class="form-group">
-        <label for="hobby-desc">description:</label>
-        <textarea class="form-input" id="hobby-desc" name="hobby-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if hobbies.length}}
-  <div class="col-md-6 hobby-list">
-    <h3>My Hobbies:</h3>
-
-    {{#each hobbies as |hobby|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{hobby.id}}">DELETE</button>
+    <div class="col mb-4">
+      <div class="col-auto">
+        <div id="titleCard">{{username}}'s Page</div>
       </div>
     </div>
-    {{/each}}
+
+    <div id="newHobbyCard" style="display: block"class="col">
+      <div class="card mb-3">
+
+        <h3 id="createHobbyHeader" class="card-header">Create a New Hobby:</h3>
+
+        <form class="form new-hobby-form card-body">
+          <div class="form-group">
+            <label for="hobby-name">Hobby name:</label>
+            <input
+              class="form-input"
+              type="text"
+              id="hobby-name"
+              name="hobby-name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="hobby-desc">Description:</label>
+            <textarea
+              class="form-input"
+              id="hobby-desc"
+              name="hobby-desc"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+        </form>
+
+
+      </div>
+
+      {{#if hobbies.length}}
+        <div class="col-md-6 hobby-list">
+          <h3>My Hobbies:</h3>
+
+          {{#each hobbies as |hobby|}}
+            <div class="row mb-2">
+              <div class="col-md-8">
+                <h4><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h4>
+              </div>
+              <div class="col-md-4">
+                <button
+                  class="btn btn-sm btn-danger"
+                  data-id="{{hobby.id}}"
+                >DELETE</button>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
   </div>
-  {{/if}}
+
+
+  <div id="newHobbyButtonColumn"class="col">
+    <button id="newHobbyButton" class="btn btn-primary">Add a new hobby!</button>
+  </div>
+
+
 </div>
+
+
 
 <script src="./js/profile.js"></script>
