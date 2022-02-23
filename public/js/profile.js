@@ -48,6 +48,8 @@ const newHobbyButtonHandler = async (event) => {
   event.preventDefault();
   var el = document.getElementById("newHobbyCard");
   el.style.display = "block";
+  var el1 = document.getElementById("newHobbyButton");
+  el1.style.display = "none";
 };
 
 
