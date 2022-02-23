@@ -1,17 +1,24 @@
 const newFormHandler = async (event) => {
+
   event.preventDefault();
 
-  const name = document.querySelector("#hobby-name").value.trim();
+  const hobby_name = document.querySelector("#hobby-name").value.trim();
   const description = document.querySelector("#hobby-desc").value.trim();
 
-  if (name && description) {
+  if (hobby_name && description) {
+
+    console.log(JSON.stringify({ hobby_name, description }));
+
+
     const response = await fetch(`/api/hobbies`, {
       method: "POST",
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({ hobby_name, description }),
       headers: {
         "Content-Type": "application/json",
       },
     });
+
+    console.log(response);
 
     if (response.ok) {
       document.location.replace("/profile");
@@ -26,7 +33,6 @@ const delButtonHandler = async (event) => {
     const id = event.target.getAttribute("data-id");
 
     const response = await fetch(`/api/hobbies/${id}`, {
-
       method: "DELETE",
     });
 
@@ -38,9 +44,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-
-
-
 const newHobbyButtonHandler = async (event) => {
   event.preventDefault();
   var el = document.getElementById("newHobbyCard");
@@ -48,15 +51,14 @@ const newHobbyButtonHandler = async (event) => {
 };
 
 
+$("#newHobbyButton").on("click", function (event) {
+  newHobbyButtonHandler(event);
+});
 
-document
-  .querySelector(".new-hobby-form")
-  .addEventListener("submit", newFormHandler);
+$(".submit-hobby").on("click", function (event) {
+  newFormHandler(event);
+});
 
-document
-  .querySelector(".hobby-list")
-  .addEventListener("click", delButtonHandler);
-
-document
-  .querySelector(".newHobbyButton")
-  .addEventListener("click", newHobbyButtonHandler);
+$(".delete-button").on("click", function (event) {
+  delButtonHandler(event);
+});
