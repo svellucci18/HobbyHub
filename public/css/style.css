@@ -135,6 +135,7 @@ main {
   margin-bottom: 5px;
   background-color: rgb(68, 46, 75);
   border-color: rgb(68, 46, 75);
+  color: rgb(216, 216, 216);
 }
 
 .btn:hover {
