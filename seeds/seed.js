@@ -1,13 +1,8 @@
 const sequelize = require("../config/connection");
-const { User } = require("../models");
+const { User, Hobby } = require("../models");
 
 const userData = require("./userData.json");
-
-/**
- * Leaving for future reference
- */
-
-// const projectData = require('./projectData.json');
+const hobbyData = require("./hobbyData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -17,16 +12,12 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  /**
-   * Leaving for future reference
-   */
-
-  // for (const project of projectData) {
-  //   await Project.create({
-  //     ...project,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
+  for (const hobby of hobbyData) {
+    await Hobby.create({
+      ...hobby,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
 
   process.exit(0);
 };

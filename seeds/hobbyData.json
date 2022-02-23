@@ -1,0 +1,17 @@
+[
+  {
+    "name": "DnD",
+    "description": "Dungeons and Dragons",
+    "category_id": 1
+  },
+  {
+    "name": "The Office",
+    "description": "Comedy TV Series",
+    "category_id": 2
+  },
+  {
+    "name": "Japanese Breakfast",
+    "description": "Sweet jams",
+    "category_id": 3
+  }
+]
