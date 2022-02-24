@@ -2,17 +2,17 @@ const newFormHandler = async (event) => {
 
   event.preventDefault();
 
-  const hobby_name = document.querySelector("#hobby-name").value.trim();
+  const name = document.querySelector("#hobby-name").value.trim();
   const description = document.querySelector("#hobby-desc").value.trim();
 
-  if (hobby_name && description) {
+  if (name && description) {
 
-    console.log(JSON.stringify({ hobby_name, description }));
+    console.log(JSON.stringify({ name, description }));
 
 
     const response = await fetch(`/api/hobbies`, {
       method: "POST",
-      body: JSON.stringify({ hobby_name, description }),
+      body: JSON.stringify({ name, description }),
       headers: {
         "Content-Type": "application/json",
       },
