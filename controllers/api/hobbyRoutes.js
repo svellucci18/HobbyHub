@@ -3,20 +3,28 @@ const { User, Hobby } = require("../../models");
 const withApiAuth = require("../../utils/auth");
 
 router.get("/", withApiAuth, async (req, res) => {
-  const hobbies = await Hobby.findAll({
-    where: {
-      user_id: req.session.user_id,
-    },
-  });
-  res.json(hobbies);
+  try {
+    const hobbies = await Hobby.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    res.status(200).json(hobbies);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 router.post("/", withApiAuth, async (req, res) => {
-  const hobbies = await Hobby.create({
-    ...req.body,
-    user_id: req.session.user_id,
-  });
-  res.json(hobbies);
+  try {
+    const hobbies = await Hobby.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    res.status(200).json(hobbies);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 router.delete("/:id", withApiAuth, async (req, res) => {
