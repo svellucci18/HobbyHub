@@ -35,32 +35,19 @@
 
 
 
-          <div class="form-group">
-            <label for="hobby-category">Category:</label>
+        <div class="form-group">
+        <label for="demo_overview_minimal">Select a food</label>
+          <select id="demo_overview_minimal" class="form-control" data-role="select-dropdown" data-profile="minimal">
+          <!-- options -->
 
-            <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Select a category:
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          {{#each categories as |category| }}
+          <option value ={{category.id}}>
+              {{category.name}}
+          </option>
+          {{/each}}  
 
-                {{!-- {{#each categories as |category| }} --}}
-                <li><a class="dropdown-item" href="#">TV</a></li>
-                <li><a class="dropdown-item" href="#">Music</a></li>
-                <li><a class="dropdown-item" href="#">Books</a></li>
-                <li><a class="dropdown-item" href="#">Board Games</a></li>
-                {{!-- {{/each}} --}}
-
-              </ul>
-            </div>
-
-          </div>
+          </select>
+        </div>
 
           <div class="form-group">
             <button
