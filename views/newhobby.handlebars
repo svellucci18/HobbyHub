@@ -1,0 +1,94 @@
+<div id="profilePage" class="row">
+  <div id="yourProfile" class="col">
+
+    <div class="col mb-4">
+      <div class="col-auto">
+        <div id="titleCard">{{username}}'s Page</div>
+      </div>
+    </div>
+
+    <div id="newHobbyCard" style="display: none" class="col">
+      <div class="card mb-3">
+
+        <h3 id="createHobbyHeader" class="card-header">Create a New Hobby:</h3>
+
+        <form class="form new-hobby-form card-body">
+          <div class="form-group">
+            <label for="hobby-name">Hobby name:</label>
+            <input
+              class="form-input"
+              type="text"
+              id="hobby-name"
+              name="hobby-name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="hobby-desc">Description:</label>
+            <textarea
+              class="form-input"
+              id="hobby-desc"
+              name="hobby-desc"
+            ></textarea>
+          </div>
+
+
+
+
+
+        <div class="form-group">
+        <label for="demo_overview_minimal">Select a food</label>
+          <select id="demo_overview_minimal" class="form-control" data-role="select-dropdown" data-profile="minimal">
+          <!-- options -->
+
+          {{#each categories as |category| }}
+          <option value ={{category.id}}>
+              {{category.name}}
+          </option>
+          {{/each}}  
+
+          </select>
+        </div>
+
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-primary submit-hobby"
+            >Create</button>
+            <a href="/profile"><button
+                class="btn cancel-button"
+              >Cancel</button></a>
+          </div>
+
+        </form>
+
+      </div>
+
+      {{#if hobbies.length}}
+        <div class="col-md-6 hobby-list">
+          <h3>My Hobbies:</h3>
+
+          {{#each hobbies as |hobby|}}
+            <div class="row mb-2">
+              <div class="col-md-8">
+                <h4><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h4>
+              </div>
+              <div class="col-md-4">
+                <button
+                  class="btn btn-sm btn-danger delete-button"
+                  data-id="{{hobby.id}}"
+                >DELETE</button>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+  <div id="newHobbyButtonColumn" class="col">
+    <button id="newHobbyButton" class="btn btn-primary">Add a new hobby!</button>
+  </div>
+
+</div>
+
+<script src="./js/profile.js"></script>
