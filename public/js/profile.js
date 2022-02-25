@@ -44,13 +44,13 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const newHobbyButtonHandler = async (event) => {
-  event.preventDefault();
-  var el = document.getElementById("newHobbyCard");
-  el.style.display = "block";
-  var el1 = document.getElementById("newHobbyButton");
-  el1.style.display = "none";
-};
+// const newHobbyButtonHandler = async (event) => {
+//   event.preventDefault();
+//   var el = document.getElementById("newHobbyCard");
+//   el.style.display = "block";
+//   var el1 = document.getElementById("newHobbyButton");
+//   el1.style.display = "none";
+// };
 
 
 // const cancelButtonHandler = async (event) => {
@@ -62,7 +62,8 @@ const newHobbyButtonHandler = async (event) => {
 // };
 
 $("#newHobbyButton").on("click", function (event) {
-  newHobbyButtonHandler(event);
+  document.location.replace("/newhobby");
+  // newHobbyButtonHandler(event);
 });
 
 // $("#cancel-button").on("click", function (event) {

@@ -21,20 +21,20 @@ router.get("/profile", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
     });
 
-    const hobbyData = await Hobby.findAll({
-      include: [User],
-      where: {
-        user_id: req.session.user_id,
-      },
-    });
+    // const hobbyData = await Hobby.findAll({
+    //   include: [User],
+    //   where: {
+    //     user_id: req.session.user_id,
+    //   },
+    // });
 
     const user = userData.get({ plain: true });
 
-    const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
+    // const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
 
     res.render("profile", {
       ...user,
-      hobbies,
+      // hobbies,
       logged_in: true,
     });
   } catch (err) {
