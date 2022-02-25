@@ -66,9 +66,9 @@ $("#newHobbyButton").on("click", function (event) {
   // newHobbyButtonHandler(event);
 });
 
-$("#cancel-button").on("click", function (event) {
-  document.location.replace("/profile");
-});
+// $("#cancel-button").on("click", function (event) {
+//   document.location.replace("/profile");
+// });
 
 $(".submit-hobby").on("click", function (event) {
   newFormHandler(event);
