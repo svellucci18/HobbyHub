@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Hobby } = require("../../models");
+const { Hobby } = require("../../models");
 const withApiAuth = require("../../utils/auth");
 
 router.get("/", withApiAuth, async (req, res) => {
