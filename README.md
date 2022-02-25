@@ -63,7 +63,7 @@ within a web browser
 
 <!-- ![screenshot of deployed website](./Assets/application.png) -->
 
-<!-- ### [Live Site]() -->
+<!-- ### [Link to Live Site]() -->
 
 ## Contributing
 
