@@ -59,4 +59,15 @@ router.post("/logout", (req, res) => {
   }
 });
 
+
+// this is supposed to return a list of all users (to start off with)
+router.get("/", async (req, res) => {
+  try {
+    const users = await User.findAll();
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;

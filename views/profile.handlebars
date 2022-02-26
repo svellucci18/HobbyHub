@@ -1,4 +1,6 @@
+{{!-- the logged-in user's page --}}
 <div id="profilePage" class="row">
+  {{!-- left side of html page --}}
   <div id="yourProfile" class="col-8">
 
     <div class="col mb-6">
@@ -8,7 +10,7 @@
     </div>
 
     <div id="list-of-hobbies" class="col hobby-list">
-      <h3>My Hobbies:</h3>
+      <h3 class="mt-4">My Hobbies:</h3>
       {{#each hobbies as |hobby|}}
         <div class="row mb-2">
           <div class="col">
@@ -29,7 +31,22 @@
 
 
   <div id="rightSideColumn" class="col">
-    <button id="newHobbyButton" class="btn btn-primary">Add a new hobby!</button>
+    <button id="newHobbyButton" class="col btn btn-primary">Add a new hobby!</button>
+
+
+
+
+    <div id="list-of-hobbies" class="col hobby-list">
+      <h3 class="mt-4">People with Similar Hobbies:</h3>
+      {{#each users as |user|}}
+        <div class="row mb-2">
+          <div class="col">
+            <h4><a href="/users/{{user.id}}">{{user.username}}</a></h4>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
 
   </div>
 

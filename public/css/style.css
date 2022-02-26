@@ -162,8 +162,12 @@ label {
 }
 
 #deleteBtn {
-  min-width: 200px;
-  max-width: 300px;
-  background-color: rgb(160, 17, 95);
+  min-width: 175px;
+  max-width: 200px;
+  background-color: rgb(109, 11, 65);
   border-color: red;
+}
+
+#deleteBtn:hover {
+  background-color: rgb(168, 12, 33);
 }
