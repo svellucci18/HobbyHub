@@ -29,11 +29,18 @@ router.get("/profile", withAuth, async (req, res) => {
       },
     });
 
+    const allUsersData = await User.findAll({
+      attributes: { exclude: ["password"] },
+    });
+
+
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
+    const users_list = allUsersData.map((user) => user.get({ plain: true }));
 
     res.render("profile", {
       ...user,
       hobbies,
+      users_list,
       logged_in: true,
     });
   } catch (err) {
