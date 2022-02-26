@@ -20,10 +20,9 @@ Hobby.belongsTo(User, {
   onDelete: "CASCADE"
 });
 
-// User.hasMany(Hobby, {
-//   foreignKey: "user_id",
-//   onDelete: "CASCADE",
-// });
+User.hasMany(Hobby, {
+});
+
 
 module.exports = {
   User,

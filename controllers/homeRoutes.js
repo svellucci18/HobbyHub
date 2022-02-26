@@ -73,7 +73,9 @@ router.get("/newhobby", withAuth, async (req, res) => {
   }
 });
 
-router.get("/profile/:id", async (req, res) => {
+
+
+router.get("/users/:id", async (req, res) => {
   try {
     const profileData = await User.findByPk(req.params.id, {
       include: [
@@ -84,13 +86,15 @@ router.get("/profile/:id", async (req, res) => {
       ],
     });
 
+    // console.log(profileData);
     const profile = profileData.get({ plain: true });
 
-    res.render("profile", {
+    res.render("otherUserProfile", {
       ...profile,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
