@@ -1,0 +1,24 @@
+{{!-- the logged-in user's page --}}
+<div id="profilePage" class="row">
+  {{!-- left side of html page --}}
+  <div id="yourProfile" class="col-8">
+
+    <div class="row">
+      <div class="col-auto">
+        <div id="titleCard">{{username}}'s Page</div>
+      </div>
+    </div>
+
+    <div id="list-of-hobbies" class="col hobby-list">
+      <h3 class="mt-4">Hobby:</h3>     
+        <div class="row mb-2">
+          <div class="col">
+            <h4><a href="/hobby/{{id}}">{{name}}</a></h4>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>

@@ -73,6 +73,30 @@ router.get("/newhobby", withAuth, async (req, res) => {
   }
 });
 
+router.get("/hobby/:id", async (req, res) => {
+  try {
+    const hobbyData = await Hobby.findByPk(req.params.id,{
+      where: {
+        id: req.session.id,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+    const hobby = await hobbyData.get({ plain: true });
+    res.render("singlehobby", {
+      ...hobby,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 
 router.get("/users/:id", async (req, res) => {
