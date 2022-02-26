@@ -1,17 +1,22 @@
-[
+[  
   {
-    "name": "DnD",
-    "description": "Dungeons and Dragons",
+    "name": "Pokemon",
+    "description": "Pocket Monsters",
     "category_id": 1
   },
   {
-    "name": "The Office",
-    "description": "Comedy TV Series",
+    "name": "Elden Ring",
+    "description": "Souls like",
+    "category_id": 1
+  },
+  {
+    "name": "Hoarders",
+    "description": "Shows for people who like to cringe on a time crunch",
     "category_id": 2
   },
   {
-    "name": "Japanese Breakfast",
-    "description": "Sweet jams",
-    "category_id": 3
+    "name": "The Office",
+    "description": "Comedy sitcom",
+    "category_id": 2
   }
 ]
