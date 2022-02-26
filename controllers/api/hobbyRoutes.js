@@ -18,7 +18,7 @@ router.get("/", withApiAuth, async (req, res) => {
 router.post("/", withApiAuth, async (req, res) => {
   try {
     const hobbies = await Hobby.create({
-      ...req.body,
+      ...req.body, //THIS IS WHAT I WAS LOOKING FOR
       user_id: req.session.user_id,
     });
     res.status(200).json(hobbies);

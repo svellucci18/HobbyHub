@@ -24,6 +24,7 @@ router.get("/profile", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     const hobbyData = await Hobby.findAll({
+      include: Category,
       where: {
         user_id: req.session.user_id,
       },
@@ -35,6 +36,8 @@ router.get("/profile", withAuth, async (req, res) => {
 
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const users_list = allUsersData.map((user) => user.get({ plain: true }));
+
+    console.log(hobbies);
 
     res.render("profile", {
       ...user,
