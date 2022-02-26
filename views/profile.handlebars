@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <div class="col-md-8 hobby-list">
+    <div id="list-of-hobbies" class="col hobby-list">
       <h3>My Hobbies:</h3>
       {{#each hobbies as |hobby|}}
         <div class="row mb-2">
@@ -19,7 +19,7 @@
               id="deleteBtn"
               class="btn btn-sm btn-danger delete-button"
               data-id="{{hobby.id}}"
-            >DELETE</button>
+            >DELETE HOBBY</button>
           </div>
         </div>
       {{/each}}
@@ -28,7 +28,7 @@
   </div>
 
 
-  <div id="newHobbyButtonColumn" class="col">
+  <div id="rightSideColumn" class="col">
     <button id="newHobbyButton" class="btn btn-primary">Add a new hobby!</button>
 
   </div>

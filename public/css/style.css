@@ -67,6 +67,9 @@ main {
   /* background-color: rgb(49, 69, 255); */
 }
 
+/* #list-of-hobbies {
+  background-color: rgb(49, 207, 255);
+} */
 
 .card {
   background-color: rgb(34, 24, 37);
@@ -105,10 +108,10 @@ main {
   width: 100%;
 }
 
-#newHobbyButtonColumn {
-  min-width: 33%;
+/* #rightSideColumn {
+  background-color: rgb(236, 26, 243);
 
-}
+} */
 
 #newHobbyButton {
   background-color: rgb(0, 184, 153);
@@ -159,7 +162,7 @@ label {
 }
 
 #deleteBtn {
-  min-width: 100px;
+  min-width: 200px;
   max-width: 300px;
   background-color: rgb(160, 17, 95);
   border-color: red;
