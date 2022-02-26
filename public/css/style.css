@@ -176,3 +176,14 @@ label {
   color:rgb(236, 26, 243);
   text-decoration:none;
 }
+
+/* background image */
+.background-image {
+  height: 800px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("../images/Music.jpg");
+  background-size: cover;
+  background-position: center;
+  
+}
