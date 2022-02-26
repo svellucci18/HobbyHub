@@ -1,11 +1,9 @@
-{{!-- the logged-in user's page --}}
 <div id="profilePage" class="row">
-  {{!-- left side of html page --}}
   <div id="yourProfile" class="col-8">
 
     <div class="row">
       <div class="col-auto">
-        <div id="titleCard">{{username}}'s Page</div>
+        <div id="titleCard">{{user.username}}'s Page</div>
       </div>
     </div>
 
@@ -13,7 +11,8 @@
       <h3 class="mt-4">Hobby:</h3>     
         <div class="row mb-2">
           <div class="col">
-            <h4><a href="/hobby/{{id}}">{{name}}</a></h4>
+            <h4>{{name}}</h4>
+            <p>{{description}}</p>
           </div>
           <div class="col">
           </div>
