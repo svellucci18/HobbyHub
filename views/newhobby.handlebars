@@ -31,19 +31,24 @@
             ></textarea>
           </div>
 
-        <div class="form-group">
-        <label for="demo_overview_minimal">Select a food</label>
-          <select id="demo_overview_minimal" class="form-control" data-role="select-dropdown" data-profile="minimal">
-          <!-- options -->
+          <div class="form-group">
+            <label for="demo_overview_minimal">Select a food</label>
+            <select
+              id="demo_overview_minimal"
+              class="form-control"
+              data-role="select-dropdown"
+              data-profile="minimal"
+            >
+              <!-- options -->
 
-          {{#each categories as |category| }}
-          <option value ={{category.id}}>
-              {{category.name}}
-          </option>
-          {{/each}}  
+              {{#each categories as |category|}}
+                <option value={{category.id}}>
+                  {{category.name}}
+                </option>
+              {{/each}}
 
-          </select>
-        </div>
+            </select>
+          </div>
 
           <div class="form-group">
             <button
@@ -54,14 +59,14 @@
 
         </form>
 
-            <a href="/profile"><button
-                class="btn" id="cancel-button"
-              >Cancel</button></a>
-
+        <a href="/profile"><button
+            class="btn"
+            id="cancel-button"
+          >Cancel</button></a>
 
       </div>
 
-      {{#if hobbies.length}}
+      {{!-- {{#if hobbies.length}}
         <div class="col-md-6 hobby-list">
           <h3>My Hobbies:</h3>
 
@@ -79,7 +84,7 @@
             </div>
           {{/each}}
         </div>
-      {{/if}}
+      {{/if}} --}}
     </div>
   </div>
 

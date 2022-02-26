@@ -60,10 +60,12 @@ router.post("/logout", (req, res) => {
 });
 
 
-// this is supposed to return a list of all users (to start off with) but im not sure its working right
+// returns a list of all users
+// TODO: make this return the most relevant users
 router.get("/", async (req, res) => {
   try {
     const users = await User.findAll();
+    console.log(users);
     res.status(200).json(users);
   } catch (err) {
     res.status(400).json(err);

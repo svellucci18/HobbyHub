@@ -171,3 +171,8 @@ label {
 #deleteBtn:hover {
   background-color: rgb(168, 12, 33);
 }
+
+#hobbyHubTitle {
+  color:rgb(236, 26, 243);
+  text-decoration:none;
+}
