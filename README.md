@@ -1,4 +1,4 @@
-# HobbyHub# HobbyHub
+# HobbyHub
 Personal API and Hobby Platform for Group Project 10
 
 <!-- ## Project Homepage
@@ -46,3 +46,4 @@ https://github.com/svellucci18/HobbyHub
 (Click Image to see live page)
 
 >[![Preview Image - Individual Brewery Page](https://user-images.githubusercontent.com/92805933/146703210-15998eb7-d157-4ed4-8a67-2ab4e2ada2ac.PNG)](https://kimberlym4488.github.io/brewtrek/) -->
+
