@@ -33,7 +33,6 @@ router.get("/profile", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
     });
 
-
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const users_list = allUsersData.map((user) => user.get({ plain: true }));
 
@@ -75,7 +74,7 @@ router.get("/newhobby", withAuth, async (req, res) => {
 
 router.get("/hobby/:id", async (req, res) => {
   try {
-    const hobbyData = await Hobby.findByPk(req.params.id,{
+    const hobbyData = await Hobby.findByPk(req.params.id, {
       where: {
         id: req.session.id,
       },
@@ -87,8 +86,16 @@ router.get("/hobby/:id", async (req, res) => {
       ],
     });
     const hobby = await hobbyData.get({ plain: true });
+
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+
     res.render("singlehobby", {
       ...hobby,
+      user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -96,8 +103,6 @@ router.get("/hobby/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 router.get("/users/:id", async (req, res) => {
   try {
