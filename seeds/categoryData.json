@@ -1,11 +1,20 @@
 [
   {
-    "name": "Board Game"
+    "name": "Games"
   },
   {
-    "name": "Television"
+    "name": "Movies/TV"
   },
   {
-    "name": "Music"
+    "name": "Music/Podcasts"
+  },
+  {
+    "name": "Food"
+  },
+  {
+    "name": "Sports"
+  },
+  {
+    "name": "Books"
   }
 ]

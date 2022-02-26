@@ -21,10 +21,12 @@ const seedDatabase = async () => {
   }
 
   for (const hobby of hobbyData) {
-    await Hobby.create({
-      ...hobby,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
+    for (var i = 0; i < users.length; i++) {
+      await Hobby.create({
+        ...hobby,
+        user_id: users[i].id,
+      });
+    }
   }
 
   process.exit(0);
