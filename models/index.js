@@ -13,8 +13,17 @@ Category.hasMany(Hobby, {
 });
 
 Category.belongsTo(User);
-
 User.hasMany(Category);
+
+Hobby.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE"
+});
+
+// User.hasMany(Hobby, {
+//   foreignKey: "user_id",
+//   onDelete: "CASCADE",
+// });
 
 module.exports = {
   User,
