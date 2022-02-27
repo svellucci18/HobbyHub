@@ -25,7 +25,10 @@ header, .project:not(:last-child) {
   margin-left: -5px;
 }
 
-
+.hobby_category {
+  /* color:rgb(44, 184, 189); */
+  font-size: 16px;
+}
 
 
 
@@ -68,7 +71,9 @@ main {
 }
 
 /* #list-of-hobbies {
-  background-color: rgb(49, 207, 255);
+  background-color: rgb(7, 30, 37);
+  padding: 10px;
+  border-radius: 5px;
 } */
 
 .card {
