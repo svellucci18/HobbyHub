@@ -7,10 +7,8 @@
       </div>
     </div>
 
-
-
-    <div id="list-of-hobbies" class="col hobby-list">
-      <div class="card mb-2">
+    {{!-- <div id="list-of-hobbies" class="col hobby-list">
+      <div class="card col mb-2">
         <div class="col">
           <h1 id="singleHobbyName" class="card-header">{{name}}</h1>
         </div>
@@ -18,9 +16,22 @@
           <h2 id="singleHobbyDescription" class="card-body">{{description}}</h2>
         </div>
       </div>
+    </div> --}}
+
+    <div class="col mb-4">
+      <div id="list-of-hobbies" class="card hobby-list">
+        <div class="col">
+          <h1 id="singleHobbyName" class="col card-header">{{name}}</h1>
+        </div>
+        <div class="col">
+          <h2
+            id="singleHobbyDescription"
+            class="col card-body"
+          >{{description}}</h2>
+        </div>
+
+      </div>
     </div>
-
-
 
   </div>
 </div>

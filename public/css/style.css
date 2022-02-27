@@ -172,6 +172,7 @@ label {
   background-color: rgb(109, 11, 65);
   border-color: red;
   margin-right: 20px;
+  font-size: 12px;
 }
 
 #deleteBtn:hover {
@@ -200,10 +201,11 @@ label {
 
 #singleHobbyDescription {
   background-color: rgb(37, 12, 37);
+  margin-bottom: 0px
 }
 
 #listHobbyName {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 #listHobbyBackground {
@@ -217,4 +219,8 @@ label {
 #listHobbyDescription {
   background-color: rgb(27, 7, 27);
   font-size: 24px;
+}
+
+.card {
+  background-color: #141414;;
 }
