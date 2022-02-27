@@ -41,7 +41,9 @@ router.get("/profile", withAuth, async (req, res) => {
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const users_list = allUsersData.map((user) => user.get({ plain: true }));
 
-    //name of profile.handlebars
+    console.log(hobbies);
+
+    // render the active user's page
     res.render("profile", {
       ...user,
       hobbies,
