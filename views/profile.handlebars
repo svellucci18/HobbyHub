@@ -14,30 +14,18 @@
       {{#each hobbies as |hobby|}}
         <div class="col mb-4">
 
-          {{!-- <div class="col">
-            <h3><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
-            <h5 class="hobby_category">{{hobby.category.name}}</h5>
-          </div>
-          <div class="col">
-            <button
-              id="deleteBtn"
-              class="btn btn-sm btn-danger delete-button"
-              data-id="{{hobby.id}}"
-            >DELETE HOBBY</button>
-          </div> --}}
 
-          <div class="card">
+          <div class="card mb-2">
 
             <div class="col">
-              <div id="singleHobbyName" class="card-header">
-                <h3 ><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
-                {{!-- <h5 class="hobby_category">{{hobby.category.name}}</h5> --}}
+              <div  id="listHobbyBackground" class="card-header col">
+                <h3 id="listHobbyName"><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
               </div>
             </div>
 
-            <div class="col">
-              <div id="singleHobbyDescription" class="card-body row">
-                <h5 class="col hobby_category">{{hobby.category.name}}</h5>
+            <div id="listHobbyDescription" class="col">
+              <div class="card-body row">
+                <h5 id="list_hobby_category" class="col hobby_category">{{hobby.category.name}}</h5>
                 <button
                   id="deleteBtn"
                   class="col btn btn-sm btn-danger delete-button"
