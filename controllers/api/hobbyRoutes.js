@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { Hobby } = require("../../models");
 const withApiAuth = require("../../utils/auth");
 
+
+//------------------- GET ALL HOBBIES OF CURRENT LOGIN USER ---------------//
 router.get("/", withApiAuth, async (req, res) => {
   try {
     const hobbies = await Hobby.findAll({
@@ -15,10 +17,13 @@ router.get("/", withApiAuth, async (req, res) => {
   }
 });
 
+
+//------------------------------ POST NEW HOBBY ---------------------------//
 router.post("/", withApiAuth, async (req, res) => {
   try {
     const hobbies = await Hobby.create({
-      ...req.body, //THIS IS WHAT I WAS LOOKING FOR
+      //Spreading the data
+      ...req.body,
       user_id: req.session.user_id,
     });
     res.status(200).json(hobbies);
@@ -27,6 +32,8 @@ router.post("/", withApiAuth, async (req, res) => {
   }
 });
 
+
+//------------------------------ DELETE HOBBY ID ---------------------------//
 router.delete("/:id", withApiAuth, async (req, res) => {
   try {
     const hobbyData = await Hobby.destroy({
