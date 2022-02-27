@@ -191,16 +191,4 @@ label {
   background-image: url("../images/Music.jpg");
   background-size: cover;
   background-position: center;
-  
-}
-
-
-#singleHobbyName {
-  background-color: rgb(53, 19, 71);
-  color:rgb(0, 255, 213);;
-}
-
-#singleHobbyDescription {
-  color:rgb(233, 168, 233);
-  font-size: 20px;
 }
