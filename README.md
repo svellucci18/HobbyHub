@@ -1,8 +1,10 @@
 # HobbyHub
 Personal API and Hobby Platform for Group Project 10
 
-<!-- ## Project Homepage
-http://localhost:3001/ -->
+
+## Project Page Heroku
+https://hobbyhub10.herokuapp.com/
+
 
 ## Project documentation URL
 https://github.com/svellucci18/HobbyHub
@@ -17,6 +19,10 @@ https://github.com/svellucci18/HobbyHub
 
 - Home Page: The sign up page allows users to sign up with a new profile for the account, or log into an existing acccount. These are the only two options of this page, and no data will display until an option has been selected.
 
+- Hobby Page: The hobby page displays a list of your current hobbies and directs you to produce more hobbies to store on your page. From here you can also view people with similar hobbies, delete a hobby, or navigate back to the main page or log out. 
+
+- Other User Page: Each user has their own page displaying their own hobbies. Feel free to scroll through a list of their hobbies to explore more options and connect with new friends.
+
 ## Author Names
 [Samantha Vellucci](https://github.com/svellucci18)
 [Billy Mott](https://github.com/Billygm)
@@ -24,13 +30,11 @@ https://github.com/svellucci18/HobbyHub
 [Eileen Mitchell](https://github.com/eileenhlmitchell19)
 
 # Project Previews
-## Home Page/Mobile View
-![Project connection](../HobbyHub/public/images/Login.png)](https://link))
 
-## Breweries Page
-(Click Image to see live page)
->[![Preview-Image-3-Breweries](https://user-images.githubusercontent.com/92805933/146703306-90dfe2c8-8958-443a-8939-11808c348eca.PNG)](https://kimberlym4488.github.io/brewtrek/)
+## Login Page
+![Project connection](../HobbyHub/public/images/Login.png)
+![Project connection](../HobbyHub/public/images/LoginMobile.png)
 
-## Single Brewery Page
-(Click Image to see live page)
->[![Preview Image - Individual Brewery Page](https://user-images.githubusercontent.com/92805933/146703210-15998eb7-d157-4ed4-8a67-2ab4e2ada2ac.PNG)](https://kimberlym4488.github.io/brewtrek/)
+## HobbyPage
+![Project connection](../HobbyHub/public/images/HobbyPage.png)
+![Project connection](../HobbyHub/public/images/HobbyPageMobile.png)
