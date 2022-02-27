@@ -40,6 +40,7 @@ router.get("/profile", withAuth, async (req, res) => {
 
     console.log(hobbies);
 
+    // render the active user's page
     res.render("profile", {
       ...user,
       hobbies,
@@ -133,6 +134,7 @@ router.get("/users/:id", async (req, res) => {
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const profile = profileData.get({ plain: true });
 
+    // render the other users' page
     res.render("otherUserProfile", {
       ...profile,
       hobbies,

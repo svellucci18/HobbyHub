@@ -3,21 +3,24 @@
 
     <div class="row">
       <div class="col-auto">
-        <div id="titleCard">{{user.username}}'s Page</div>
+        <div id="titleCard">{{user.username}}'s Hobby</div>
       </div>
     </div>
 
+
+
     <div id="list-of-hobbies" class="col hobby-list">
-      <h3 class="mt-4">Hobby:</h3>     
-        <div class="row mb-2">
-          <div class="col">
-            <h4>{{name}}</h4>
-            <p>{{description}}</p>
-          </div>
-          <div class="col">
-          </div>
+      <div class="card mb-2">
+        <div class="col">
+          <h1 id="singleHobbyName" class="card-header">{{name}}</h1>
         </div>
+        <div class="col">
+          <h2 id="singleHobbyDescription" class="card-body">{{description}}</h2>
+        </div>
+      </div>
     </div>
+
+
 
   </div>
 </div>
