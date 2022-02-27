@@ -111,6 +111,7 @@ router.get("/hobby/:id", async (req, res) => {
 // render a single user's page
 router.get("/users/:id", async (req, res) => {
   try {
+    // get the selected user's hobbies
     const profileData = await User.findByPk(req.params.id, {
       include: [
         {
@@ -120,30 +121,16 @@ router.get("/users/:id", async (req, res) => {
       ],
     });
 
-
-
-
-
+    // get the categories of the hobbies
     const hobbyData = await Hobby.findAll({
       include: Category,
       where: {
-        user_id: req.session.user_id,
+        user_id: req.params.id,
       },
     });
+
+
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
-
-    // const categoryData = await User.findByPk(req.params.id, {
-    //   include: [
-    //     {
-    //       model: Category,
-    //       attributes: ["name"],
-    //     },
-    //   ],
-    // });
-    // const hobbies = categoryData.map((hobby) => hobby.get({ plain: true }));
-
-
-
     const profile = profileData.get({ plain: true });
 
     res.render("otherUserProfile", {
