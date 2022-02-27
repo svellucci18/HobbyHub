@@ -2,15 +2,14 @@
 <div id="profilePage" class="row">
   {{! left side of html page }}
   <div id="yourProfile" class="col">
-
     <div class="row">
       <div class="col-auto">
         <div id="titleCard">{{username}}'s Page</div>
       </div>
     </div>
-
     <div id="list-of-hobbies" class="col hobby-list">
       <h3 class="mt-4">{{username}}'s Hobbies:</h3>
+      {{! prints all existing hobbies }}
       {{#each hobbies as |hobby|}}
 
 
@@ -33,25 +32,7 @@
 
       {{/each}}
     </div>
-
   </div>
-
-  {{!-- <div id="rightSideColumn" class="col">
-
-    <div id="list-of-hobbies" class="col hobby-list">
-      <h3 class="mt-4">People with Similar Hobbies:</h3>
-      {{#each users_list as |user|}}
-        <div class="row mb-2">
-          <div class="col">
-            <h4><a href="/users/{{user.id}}">{{user.username}}</a></h4>
-          </div>
-        </div>
-      {{/each}}
-    </div>
-
-
-  </div> --}}
-
 </div>
 
 <script src="./js/profile.js"></script>
