@@ -30,7 +30,8 @@
               name="hobby-desc"
             ></textarea>
           </div>
-
+          
+            <!-- DROP DOWN MENU -->      
           <div class="form-group">
             <label for="demo_overview_minimal">Select a Category:</label>
             <select
@@ -63,31 +64,9 @@
             class="btn"
             id="cancel-button"
           >Cancel</button></a>
-
       </div>
-
-      {{!-- {{#if hobbies.length}}
-        <div class="col-md-6 hobby-list">
-          <h3>My Hobbies:</h3>
-
-          {{#each hobbies as |hobby|}}
-            <div class="row mb-2">
-              <div class="col-md-8">
-                <h4><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h4>
-              </div>
-              <div class="col-md-4">
-                <button
-                  class="btn btn-sm btn-danger delete-button"
-                  data-id="{{hobby.id}}"
-                >DELETE</button>
-              </div>
-            </div>
-          {{/each}}
-        </div>
-      {{/if}} --}}
     </div>
   </div>
-
 </div>
 
 <script src="./js/newHobby.js"></script>

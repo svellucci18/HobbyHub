@@ -2,9 +2,11 @@ const router = require("express").Router();
 const { User, Hobby, Category } = require("../models");
 const withAuth = require("../utils/auth");
 
+//---------------------------- LOGIN GET --------------------------------//
 router.get("/", async (req, res) => {
   try {
     // Pass serialized data and session flag into template
+    // Refers to login.handlebars
     res.render("login", {
       logged_in: req.session.logged_in,
     });
@@ -13,6 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//--------------------- MIDDLEWARE FOR PROFILE --------------------------//
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
   try {
@@ -37,6 +40,7 @@ router.get("/profile", withAuth, async (req, res) => {
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const users_list = allUsersData.map((user) => user.get({ plain: true }));
 
+    //name of profile.handlebars
     res.render("profile", {
       ...user,
       hobbies,
@@ -48,6 +52,8 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
+
+//-------------------------- RENDER NEW HOBBY PAGE --------------------//
 router.get("/newhobby", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -73,6 +79,8 @@ router.get("/newhobby", withAuth, async (req, res) => {
   }
 });
 
+
+// ----------------------------- RENDER SINGLE HOBBY ---------------------//
 router.get("/hobby/:id", async (req, res) => {
   try {
     const hobbyData = await Hobby.findByPk(req.params.id,{
@@ -98,7 +106,7 @@ router.get("/hobby/:id", async (req, res) => {
 });
 
 
-
+//-------------------------- RENDER SINGLE OTHER USER ------------------//
 router.get("/users/:id", async (req, res) => {
   try {
     const profileData = await User.findByPk(req.params.id, {
@@ -123,6 +131,8 @@ router.get("/users/:id", async (req, res) => {
   }
 });
 
+
+//---------------------------- RENDER LOGIN REDIRECT -------------------//
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
