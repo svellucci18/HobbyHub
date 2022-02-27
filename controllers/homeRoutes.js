@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
 
 //--------------------- MIDDLEWARE FOR PROFILE --------------------------//
 // Use withAuth middleware to prevent access to route
+// render the active user's page
 router.get("/profile", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -27,6 +28,7 @@ router.get("/profile", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     const hobbyData = await Hobby.findAll({
+      include: Category,
       where: {
         user_id: req.session.user_id,
       },
@@ -35,7 +37,6 @@ router.get("/profile", withAuth, async (req, res) => {
     const allUsersData = await User.findAll({
       attributes: { exclude: ["password"] },
     });
-
 
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const users_list = allUsersData.map((user) => user.get({ plain: true }));
@@ -83,7 +84,7 @@ router.get("/newhobby", withAuth, async (req, res) => {
 // ----------------------------- RENDER SINGLE HOBBY ---------------------//
 router.get("/hobby/:id", async (req, res) => {
   try {
-    const hobbyData = await Hobby.findByPk(req.params.id,{
+    const hobbyData = await Hobby.findByPk(req.params.id, {
       where: {
         id: req.session.id,
       },
@@ -95,8 +96,16 @@ router.get("/hobby/:id", async (req, res) => {
       ],
     });
     const hobby = await hobbyData.get({ plain: true });
+
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+
     res.render("singlehobby", {
       ...hobby,
+      user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -105,10 +114,10 @@ router.get("/hobby/:id", async (req, res) => {
   }
 });
 
-
 //-------------------------- RENDER SINGLE OTHER USER ------------------//
 router.get("/users/:id", async (req, res) => {
   try {
+    // get the selected user's hobbies
     const profileData = await User.findByPk(req.params.id, {
       include: [
         {
@@ -118,11 +127,21 @@ router.get("/users/:id", async (req, res) => {
       ],
     });
 
-    // console.log(profileData);
+    // get the categories of the hobbies
+    const hobbyData = await Hobby.findAll({
+      include: Category,
+      where: {
+        user_id: req.params.id,
+      },
+    });
+
+
+    const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const profile = profileData.get({ plain: true });
 
     res.render("otherUserProfile", {
       ...profile,
+      hobbies,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

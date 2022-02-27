@@ -11,11 +11,25 @@
       <h3 class="mt-4">{{username}}'s Hobbies:</h3>
       {{! prints all existing hobbies }}
       {{#each hobbies as |hobby|}}
-        <div class="row mb-2">
+
+
+        {{!-- <div class="row mb-2">
           <div class="col">
             <h4><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h4>
           </div>
+        </div> --}}
+
+
+
+
+        <div class="row mb-4">
+          <div class="col">
+            <h3><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
+            <h5 class="hobby_category">{{hobby.category.name}}</h5>
+          </div>
         </div>
+
+
       {{/each}}
     </div>
   </div>
