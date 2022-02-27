@@ -10,12 +10,14 @@
     </div>
 
     <div id="list-of-hobbies" class="col hobby-list">
-      <h3 class="mt-4">My Hobbies:</h3>
+      <h3 class="mt-2 mb-2">My Hobbies:</h3>
       {{#each hobbies as |hobby|}}
-        <div class="row mb-2">
-          <div class="col">
-            <h4><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a> {{hobby.category.name}}</h4>
+        <div class="row mb-4">
 
+          
+          <div class="col">
+            <h3><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
+            <h5 class="hobby_category">{{hobby.category.name}}</h5>
           </div>
           <div class="col">
             <button
@@ -24,6 +26,8 @@
               data-id="{{hobby.id}}"
             >DELETE HOBBY</button>
           </div>
+
+
         </div>
       {{/each}}
     </div>
@@ -37,7 +41,7 @@
 
 
 
-    <div id="list-of-hobbies" class="col hobby-list">
+    <div class="col hobby-list">
       <h3 class="mt-4">People with Similar Hobbies:</h3>
       {{#each users_list as |user|}}
         <div class="row mb-2">

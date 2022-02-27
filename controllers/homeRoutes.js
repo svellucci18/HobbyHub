@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
+// render the active user's page
 router.get("/profile", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -107,8 +108,10 @@ router.get("/hobby/:id", async (req, res) => {
   }
 });
 
+// render a single user's page
 router.get("/users/:id", async (req, res) => {
   try {
+    // get the selected user's hobbies
     const profileData = await User.findByPk(req.params.id, {
       include: [
         {
@@ -118,11 +121,21 @@ router.get("/users/:id", async (req, res) => {
       ],
     });
 
-    // console.log(profileData);
+    // get the categories of the hobbies
+    const hobbyData = await Hobby.findAll({
+      include: Category,
+      where: {
+        user_id: req.params.id,
+      },
+    });
+
+
+    const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const profile = profileData.get({ plain: true });
 
     res.render("otherUserProfile", {
       ...profile,
+      hobbies,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
