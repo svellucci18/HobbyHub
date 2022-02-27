@@ -29,9 +29,9 @@ https://github.com/svellucci18/HobbyHub
 
 # Project Previews
 ## Login Page
-![Project connection](../HobbyHub/public/images/Login.png)
-![Project connection](../HobbyHub/public/images/LoginMobile.png)
+![Project connection](./public/images/Login.png)
+![Project connection](./public/images/LoginMobile.png)
 
 ## HobbyPage
-![Project connection](../HobbyHub/public/images/HobbyPage.png)
-![Project connection](../HobbyHub/public/images/HobbyPageMobile.png)
+![Project connection](./public/images/HobbyPage.png)
+![Project connection](./public/images/HobbyPageMobile.png)
