@@ -15,7 +15,7 @@ https://github.com/svellucci18/HobbyHub
 &#10004; Share your favorites with family and friends, or discover other people with similar tastes!
 
 ## Summary
-- Opening Summary: HobbyHub is a webservice that utilizes Javascript and Node to provide users with the ability to log and share similar extracirricular interests. The css/html framework it utilizes is[bootstrap](https://getbootstrap.com/docs/4.0/components/navbar/). Technologies used included css, html, javaScript, jQuery, node, sessions, sequelize, bootstrap, handlebars, express, ESlint, and MYSQL.
+- Opening Summary: HobbyHub is a webservice that utilizes Javascript and Node to provide users with the ability to log and share similar extracirricular interests. The css/html framework it utilizes is  [bootstrap](https://getbootstrap.com/docs/4.0/components/navbar/). Technologies used included css, html, javaScript, jQuery, node, sessions, sequelize, bootstrap, handlebars, express, ESlint, and MYSQL.
 
 - Home Page: The sign up page allows users to sign up with a new profile for the account, or log into an existing acccount. These are the only two options of this page, and no data will display until an option has been selected.
 
@@ -32,9 +32,9 @@ https://github.com/svellucci18/HobbyHub
 # Project Previews
 
 ## Login Page
-![Project connection](../HobbyHub/public/images/Login.png)
-![Project connection](../HobbyHub/public/images/LoginMobile.png)
+![Project connection](./public/images/Login.png)
+![Project connection](./public/images/LoginMobile.png)
 
 ## HobbyPage
-![Project connection](../HobbyHub/public/images/HobbyPage.png)
-![Project connection](../HobbyHub/public/images/HobbyPageMobile.png)
+![Project connection](./public/images/HobbyPage.png)
+![Project connection](./public/images/HobbyPageMobile.png)
