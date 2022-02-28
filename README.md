@@ -1,8 +1,10 @@
 # HobbyHub
 Personal API and Hobby Platform for Group Project 10
 
+
 ## Project Page Heroku
 https://hobbyhub10.herokuapp.com/
+
 
 ## Project documentation URL
 https://github.com/svellucci18/HobbyHub
@@ -28,6 +30,7 @@ https://github.com/svellucci18/HobbyHub
 [Eileen Mitchell](https://github.com/eileenhlmitchell19)
 
 # Project Previews
+
 ## Login Page
 ![Project connection](../HobbyHub/public/images/Login.png)
 ![Project connection](../HobbyHub/public/images/LoginMobile.png)

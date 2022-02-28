@@ -1,6 +1,6 @@
-{{!-- the logged-in user's page --}}
+{{! the logged-in user's page }}
 <div id="profilePage" class="row">
-  {{!-- left side of html page --}}
+  {{! left side of html page }}
   <div id="yourProfile" class="col-8">
 
     <div class="row">
@@ -12,21 +12,27 @@
     <div id="list-of-hobbies" class="col hobby-list">
       <h3 class="mt-2 mb-2">My Hobbies:</h3>
       {{#each hobbies as |hobby|}}
-        <div class="row mb-4">
+        <div class="col mb-2">
+          <div class="card mb-2">
 
-          
-          <div class="col">
-            <h3><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
-            <h5 class="hobby_category">{{hobby.category.name}}</h5>
-          </div>
-          <div class="col">
-            <button
-              id="deleteBtn"
-              class="btn btn-sm btn-danger delete-button"
-              data-id="{{hobby.id}}"
-            >DELETE HOBBY</button>
-          </div>
+            <div class="col">
+              <div  id="listHobbyBackground" class="card-header col">
+                <h3 id="listHobbyName"><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
+              </div>
+            </div>
 
+            <div id="listHobbyDescription" class="col">
+              <div class="card-body row">
+                <h5 id="list_hobby_category" class="col hobby_category">{{hobby.category.name}}</h5>
+                <button
+                  id="deleteBtn"
+                  class="col btn btn-sm btn-danger delete-button"
+                  data-id="{{hobby.id}}"
+                >DELETE HOBBY</button>
+              </div>
+            </div>
+
+          </div>
 
         </div>
       {{/each}}
@@ -34,12 +40,8 @@
 
   </div>
 
-
   <div id="rightSideColumn" class="col">
     <button id="newHobbyButton" class="col btn btn-primary">Add a new hobby!</button>
-
-
-
 
     <div class="col hobby-list">
       <h3 class="mt-4">People with Similar Hobbies:</h3>
@@ -51,7 +53,6 @@
         </div>
       {{/each}}
     </div>
-
 
   </div>
 

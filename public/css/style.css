@@ -171,6 +171,8 @@ label {
   max-width: 200px;
   background-color: rgb(109, 11, 65);
   border-color: red;
+  margin-right: 20px;
+  font-size: 12px;
 }
 
 #deleteBtn:hover {
@@ -190,4 +192,35 @@ label {
   background-image: url("../images/Music.jpg");
   background-size: cover;
   background-position: center;
+}
+
+#singleHobbyName {
+  background-color: rgb(58, 16, 58);
+  font-size: 60px;
+}
+
+#singleHobbyDescription {
+  background-color: rgb(37, 12, 37);
+  margin-bottom: 0px
+}
+
+#listHobbyName {
+  font-size: 36px;
+}
+
+#listHobbyBackground {
+  background-color: rgb(51, 11, 51);
+}
+
+#list_hobby_category {
+  font-size: 24px;
+}
+
+#listHobbyDescription {
+  background-color: rgb(27, 7, 27);
+  font-size: 24px;
+}
+
+.card {
+  background-color: #141414;;
 }

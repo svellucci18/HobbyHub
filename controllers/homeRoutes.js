@@ -114,6 +114,7 @@ router.get("/hobby/:id", async (req, res) => {
   }
 });
 
+
 //-------------------------- RENDER SINGLE OTHER USER ------------------//
 router.get("/users/:id", async (req, res) => {
   try {
@@ -139,6 +140,7 @@ router.get("/users/:id", async (req, res) => {
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const profile = profileData.get({ plain: true });
 
+    // render the other users' page
     res.render("otherUserProfile", {
       ...profile,
       hobbies,
