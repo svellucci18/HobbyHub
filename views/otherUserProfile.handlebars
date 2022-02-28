@@ -11,21 +11,19 @@
       <h3 class="mt-4">{{username}}'s Hobbies:</h3>
       {{! prints all existing hobbies }}
       {{#each hobbies as |hobby|}}
-
-
-
-
-
-
-
-        <div class="row mb-4">
-          <div class="col">
-            <h3><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
-            <h5 class="hobby_category">{{hobby.category.name}}</h5>
+        <div class="col mb-2">
+          <div class="card mb-2">
+            <div class="col">
+              <div  id="listHobbyBackground" class="card-header col">
+                <h3 id="listHobbyName"><a href="/hobby/{{hobby.id}}">{{hobby.name}}</a></h3>
+              </div>
+            </div>
+            <div id="listHobbyDescription" class="col">
+              <div class="card-body row">
+                <h5 id="list_hobby_category" class="col hobby_category">{{hobby.category.name}}</h5>
+            </div>
           </div>
         </div>
-
-
       {{/each}}
     </div>
   </div>
