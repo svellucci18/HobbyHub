@@ -39,8 +39,14 @@ router.get("/profile", withAuth, async (req, res) => {
     });
 
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
-    const users_list = allUsersData.map((user) => user.get({ plain: true }));
 
+    const users_list = allUsersData.map((otherUser) => {
+      if (otherUser.id !== user.id) {
+        return otherUser.get({ plain: true });
+      }
+    });
+
+    console.log(users_list);
     //name of profile.handlebars
     res.render("profile", {
       ...user,
@@ -52,7 +58,6 @@ router.get("/profile", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 //-------------------------- RENDER NEW HOBBY PAGE --------------------//
 router.get("/newhobby", withAuth, async (req, res) => {
@@ -80,7 +85,6 @@ router.get("/newhobby", withAuth, async (req, res) => {
   }
 });
 
-
 // ----------------------------- RENDER SINGLE HOBBY ---------------------//
 router.get("/hobby/:id", async (req, res) => {
   try {
@@ -107,7 +111,6 @@ router.get("/hobby/:id", async (req, res) => {
   }
 });
 
-
 //-------------------------- RENDER SINGLE OTHER USER ------------------//
 router.get("/users/:id", async (req, res) => {
   try {
@@ -129,7 +132,6 @@ router.get("/users/:id", async (req, res) => {
       },
     });
 
-
     const hobbies = hobbyData.map((hobby) => hobby.get({ plain: true }));
     const profile = profileData.get({ plain: true });
 
@@ -144,7 +146,6 @@ router.get("/users/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 //---------------------------- RENDER LOGIN REDIRECT -------------------//
 router.get("/login", (req, res) => {
