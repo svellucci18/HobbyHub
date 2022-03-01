@@ -42,11 +42,13 @@
     <div class="col hobby-list">
       <h3 class="mt-4">People with Similar Hobbies:</h3>
       {{#each users_list as |user|}}
-        <div class="row mb-2">
-          <div class="col">
-            <h4><a href="/users/{{user.id}}">{{user.username}}</a></h4>
+        {{#if user.id}}
+          <div class="row mb-2">
+            <div class="col">
+              <h4><a href="/users/{{user.id}}">{{user.username}}</a></h4>
+            </div>
           </div>
-        </div>
+        {{/if}}
       {{/each}}
     </div>
 
